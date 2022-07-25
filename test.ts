@@ -1,0 +1,7 @@
+
+        type GetProductEndpointResponse = {
+          
+      name?: string;
+    
+        }
+      
