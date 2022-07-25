@@ -1,6 +1,8 @@
 import {Command} from '@oclif/core'
 import DtoGeneratorTemplate from '../../generator-templates/dto-generator-template'
-import {writeFile} from '../../utils/file-system'
+import {loadJson, writeFile} from '../../utils/file-system'
+// eslint-disable-next-line camelcase
+import {OpenAPIV3_1} from 'openapi-types'
 
 export default class RunIndex extends Command {
   static description = 'Run openapi-type-generator'
@@ -11,9 +13,14 @@ export default class RunIndex extends Command {
   ]
 
   async run(): Promise<void> {
-    const generator = new DtoGeneratorTemplate()
-    const content = generator.getFilesToGenerate()
+    // eslint-disable-next-line camelcase
+    const openapiJson = await loadJson<OpenAPIV3_1.Document>('./example-api.json')
 
-    await writeFile('./test.ts', content)
+    const generator = new DtoGeneratorTemplate(openapiJson)
+    const files = generator.getFilesToGenerate()
+
+    for (const file of files) {
+      writeFile(file.file, file.contents)
+    }
   }
 }

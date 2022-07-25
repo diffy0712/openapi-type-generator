@@ -1,5 +1,5 @@
 
-        type GetProductEndpointResponse = {
+        export type GetProductEndpointResponse = {
           
       name?: string;
     
