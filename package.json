@@ -12,7 +12,7 @@
     "ink": "^3.2.0",
     "mobx": "^6.6.1",
     "mobx-react-lite": "^3.4.0",
-    "node": "^18.5.0",
+    "node": "^19.0.0",
     "openapi-types": "^12.0.0",
     "react": "^18.0.2",
     "react-dom": "^18.2.0",
