@@ -8,19 +8,24 @@
   },
   "bugs": "https://github.com/diffy0712/openapi-type-generator/issues",
   "dependencies": {
-    "@oclif/core": "^1",
-    "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.1.0",
+    "@types/react-dom": "^18.0.6",
+    "ink": "^3.2.0",
+    "mobx": "^6.6.1",
+    "mobx-react-lite": "^3.4.0",
     "node": "^18.5.0",
-    "openapi-types": "^12.0.0"
+    "openapi-types": "^12.0.0",
+    "react": "^18.0.2",
+    "react-dom": "^18.2.0",
+    "ts-morph": "^15.1.0"
   },
   "devDependencies": {
-    "@oclif/test": "^2",
-    "@types/chai": "^4",
-    "@types/mocha": "^9.1.1",
     "@types/node": "^16.11.45",
-    "chai": "^4",
-    "eslint": "^7.32.0",
+    "@types/react": "^18.0.17",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.30.0",
     "eslint-config-oclif": "^4",
     "eslint-config-oclif-typescript": "^1.0.2",
     "globby": "^11",
@@ -35,14 +40,14 @@
     "node": ">=12.0.0"
   },
   "files": [
-    "/bin",
-    "/dist",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "/dist"
   ],
   "homepage": "https://github.com/diffy0712/openapi-type-generator",
   "keywords": [
-    "openapi", "static code generator", "typescript", "openapi generator"
+    "openapi",
+    "static code generator",
+    "typescript",
+    "openapi generator"
   ],
   "license": "MIT",
   "main": "dist/index.js",
@@ -56,13 +61,8 @@
     ]
   },
   "scripts": {
-    "build": "shx rm -rf dist && tsc -b",
-    "lint": "eslint . --ext .ts --config .eslintrc",
-    "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
-    "prepack": "yarn build && oclif manifest && oclif readme",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
+    "generator": "ts-node ./src/run.tsx",
+    "lint": "eslint . --ext .ts --config .eslintrc.js"
   },
   "types": "dist/index.d.ts"
 }

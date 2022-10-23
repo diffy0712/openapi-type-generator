@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
     "declaration": true,
     "importHelpers": true,
     "module": "commonjs",
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "target": "es2019"
+    "target": "es2019",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "useDefineForClassFields": true
   },
   "include": [
     "src/**/*",

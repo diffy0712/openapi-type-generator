@@ -1,9 +1,6 @@
 import ErrnoException = NodeJS.ErrnoException;
 import * as fs from 'node:fs'
 
-/**
- * Load a file and return as a promise.
- */
 export async function loadFile(filepath: string): Promise<string> {
   return new Promise((resolve, reject) => {
     fs.readFile(filepath, 'utf8', (err: ErrnoException | null, content: string) => {
@@ -33,11 +30,6 @@ export function loadJson<T>(filepath: string): Promise<T> {
   })
 }
 
-/**
- * Load a file and return as a promise.
- * @param filepath
- * @param data
- */
 export async function writeFile(filepath: string, data: string): Promise<boolean> {
   return new Promise((resolve, reject) => {
     const fileOptions: fs.WriteFileOptions = {
