@@ -23,7 +23,7 @@
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-config-oclif": "^4",
